@@ -1,222 +1,223 @@
-📌 Project Overview
+# 📦 Delivering Right, Delivering On Time | Power BI Project
 
-Timely and complete deliveries are critical for supply chain excellence. This project analyzes On-Time In-Full (OTIF) performance using Power BI to identify operational gaps, customer impact, and improvement opportunities.
+**Understanding Gaps in Supply Chain Performance**
 
-The dashboard provides insights into delivery reliability, customer performance, product demand, and operational bottlenecks using a data-driven approach.
+---
 
-🎯 Problem Statement
+## 📌 Project Overview
 
-In today’s fast-moving and competitive market:
+In today’s fast-paced and competitive supply chain environment, **delivery reliability is a key driver of customer satisfaction and operational excellence**. Businesses must ensure that orders are delivered **On-Time and In-Full (OTIF)** to maintain trust, reduce churn, and optimize logistics efficiency.
 
-Customer expectations are high.
+This project analyzes **supply chain delivery performance using interactive Power BI dashboards**, focusing on identifying operational bottlenecks, underperforming customers, demand patterns, and OTIF gaps.
 
-Delays and incomplete deliveries impact credibility.
+The objective is to transform raw operational data into **actionable insights** that help improve delivery reliability, customer retention, and strategic decision-making.
 
-Lack of real-time visibility causes operational inefficiencies.
+---
 
-Common challenges include:
+## 🎯 Project Objectives
 
-Fragmented logistics
+* Measure total orders placed and delivered over time
+* Calculate and monitor **On-Time Delivery (OTD)**, **In-Full Delivery (IFD)**, and **OTIF %**
+* Identify patterns in late and incomplete deliveries
+* Detect underperforming customers, cities, and product categories
+* Compare actual performance against customer OTIF targets
+* Analyze weekday vs weekend delivery performance
+* Provide strategic recommendations to improve OTIF rate
 
-Weekend delivery bottlenecks
+---
 
-Poor OTIF monitoring
+## 🛠 Tools & Technologies
 
-Underperforming customer segments
+* **Power BI** – Data Modeling & Dashboard Development
+* **DAX (Data Analysis Expressions)** – KPI & Target Calculations
+* **Power Query** – Data Cleaning & Transformation
+* **Star Schema Data Model** – Fact & Dimension tables
 
-This project aims to monitor, analyze, and improve delivery performance using interactive Power BI dashboards.
+---
 
-🎯 Objectives
+## 📈 Key Metrics Tracked
 
-Measure total orders placed and delivered over time.
+* **Total Orders**
+* **Successful OTIF %**
+* **Failed OTIF Orders**
+* **On-Time %**
+* **In-Full %**
+* **Target Gap Analysis (OTIF, OTD, IFD)**
+* **City-wise & Category-wise Order Volume**
+* **Delay Distribution by Days**
 
-Calculate On-Time Delivery (OTD), In-Full Delivery (IFD), and OTIF rates.
+---
 
-Identify late delivery patterns.
+## 🔍 Key Insights from the Dashboard
 
-Detect underperforming customers, cities, and product categories.
+### 🔹 Overall Delivery Performance
 
-Compare actual performance vs agreed customer targets.
+* **Total Orders:** 57K
+* **Successful OTIF:** 65.05%
+* **Failed OTIF Orders:** 30K
+* **Maximum Delay Observed:** 3 Days
 
-Analyze weekend vs weekday logistics impact.
+**Insight:**
+A significant portion of orders fail OTIF compliance, indicating operational inefficiencies that require targeted intervention.
 
-Provide data-backed strategic recommendations.
+---
 
-🏗️ Methodology
-1️⃣ Data Connection
+### 🔹 Customer Performance Analysis
 
-Connected structured datasets into Power BI.
+* **Best Served Customer:** Propel Mart
+* **Poorly Fulfilled Customer:** Lotus Mart
+* **Total Customers:** 35
 
-2️⃣ Data Cleaning
+**Insight:**
+Certain customers consistently experience delivery gaps, increasing churn risk. Targeted operational improvements can enhance retention.
 
-Removed inconsistencies
+---
 
-Handled missing values
+### 🔹 Product & Category Analysis
 
-Standardized formats
+* **Top Ordered Product:** AM Milk 250
+* **Least Ordered Product:** AM Ghee 100
+* **Highest Demand Category:** Dairy (10.6M orders)
 
-3️⃣ Data Modeling
+**Insight:**
+High-demand products and categories require stronger inventory planning and logistics prioritization.
 
-Star schema model using:
+---
 
-fact_order_lines
+### 🔹 City-wise Order Distribution
 
-dim_targets_orders
+* **Top Cities:** Vadodara & Ahmedabad (~4.6M orders each)
 
-Customer and product dimensions
+**Insight:**
+Logistics capacity should be optimized in high-volume cities to prevent delivery delays.
 
-4️⃣ Data Processing & DAX Calculations
+---
 
-Key Metrics:
+### 🔹 Day-wise Order & Delivery Trends
 
+* **Most Orders Placed On:** Tuesday
+* **Most Expected Delivery Day:** Thursday
+* **Most Deliveries Completed On:** Weekends
+
+**Insight:**
+Workforce and logistics planning must focus on mid-week demand peaks and weekend fulfillment loads.
+
+---
+
+## 📊 Dashboard Features
+
+### 🏠 Overview Page
+
+* KPI Cards (Total Orders, OTIF %, Failed Orders)
+* Gauge Chart (Target vs Actual)
+* Category & City-wise Analysis
+* Seasonal Order Trends
+
+### 👥 Customer Insights
+
+* Customer-level OTIF breakdown
+* Delay distribution
+* Top & bottom customer comparison
+
+### 🛒 Product Insights
+
+* Product demand analysis
+* Category performance
+* Product-level delay table
+
+### 📦 Order Insights
+
+* Orders placed vs delivered (day-wise)
+* % of delayed orders
+* On-Time, In-Full & OTIF comparison
+
+---
+
+## 🧮 Sample DAX Calculation
+
+```DAX
 OTIF_Percentage =
 DIVIDE(
-    CALCULATE(COUNTROWS(fact_order_lines),
-    fact_order_lines[On Time In Full] = 1),
+    CALCULATE(
+        COUNTROWS(fact_order_lines),
+        fact_order_lines[On Time In Full] = 1
+    ),
     COUNTROWS(fact_order_lines)
 ) * 100
+```
 
-Other KPIs include:
+Other calculated metrics include:
 
-OnTime_Percentage
+* OnTime_Percentage
+* InFull_Percentage
+* Failed_OTIF_Orders
+* Target Gap Analysis
 
-InFull_Percentage
+---
 
-Failed OTIF %
+## 🔎 Root Cause Analysis
 
-Late Orders
+Identified potential causes for OTIF failures:
 
-InFull Target Gap
+* Weekend delivery overload
+* Operational bottlenecks
+* Mode of transport inefficiencies
+* Unrealistic customer expectations
+* Inventory misalignment
 
-OnTime Target Gap
+---
 
-OTIF Target Gap
+## 🛠 Strategic Recommendations
 
-📊 Dashboard Features
-🏠 Overview Page
+* Increase weekday manpower allocation
+* Improve logistics visibility using tracking tools
+* Focus on high-risk customers (e.g., Lotus Mart)
+* Strengthen supplier collaboration
+* Conduct regular OTIF KPI reviews
+* Align delivery commitments with operational capacity
 
-Total Orders: 57K
+---
 
-Failed OTIF Orders: 30K
+## 📌 Business Impact
 
-Successful OTIF: 65.05%
+✔ Enables proactive OTIF monitoring
+✔ Reduces operational inefficiencies
+✔ Improves customer satisfaction
+✔ Supports data-driven supply chain decisions
+✔ Enhances strategic planning & demand forecasting
 
-Most Orders Placed: Tuesday
+---
 
-Most Expected Delivery Day: Thursday
+## 📷 Dashboard Preview
 
-Most Deliveries Done: Weekends
-
-📍 City Insights
-
-Vadodara & Ahmedabad lead in order volume.
-
-Dairy category has highest demand (10.6M orders).
-
-Peak demand observed in May.
-
-👥 Customer Insights
-
-Total Customers: 35
-
-Best Served Customer: Propel Mart
-
-Poorly Fulfilled Customer: Lotus Mart
-
-Delay distribution by customer
-
-Customer-level OTIF breakdown
-
-🛒 Product Insights
-
-Top Product: AM Milk 250
-
-Least Ordered Product: AM Ghee 100
-
-Category-wise order trends
-
-Product-level delay analysis
-
-📦 Order Insights
-
-Orders Placed vs Delivered (Weekday Analysis)
-
-% of Delayed Orders
-
-Customer-level performance table
-
-OTIF breakdown by order type
-
-🔍 Key Findings
-
-30K orders failed OTIF compliance.
-
-Most delayed deliveries occur around peak weekday expectations.
-
-Some customers show consistent OTIF underperformance.
-
-High On-Time deliveries sometimes still fail In-Full criteria.
-
-Operational gaps exist in manpower allocation and logistics scheduling.
-
-🛠 Root Cause & Recommendations
-🔹 Operational Improvements
-
-Increase weekday manpower (especially before Thursday peaks).
-
-Improve logistics planning for high-demand cities.
-
-Enhance transport allocation for peak categories.
-
-🔹 Strategic Actions
-
-Improve service quality for underperforming customers (e.g., Lotus Mart).
-
-Set clearer delivery expectations.
-
-Use advanced tracking for better visibility.
-
-Conduct regular OTIF performance reviews.
-
-📈 Business Impact
-
-This dashboard enables:
-
-Proactive OTIF monitoring
-
-Reduced delivery failures
-
-Improved customer retention
-
-Data-backed logistics optimization
-
-Alignment with contractual delivery targets
-
-Dashboard:
 <img width="2247" height="1151" alt="image" src="https://github.com/user-attachments/assets/647ce451-d1c8-4cc3-a855-dec98e12019d" />
 
 Customer Insights:
+
 <img width="1272" height="722" alt="image" src="https://github.com/user-attachments/assets/b62c8b68-0968-48e4-a14c-2c08bc98f1ef" />
 
 Product Insights:
+
 <img width="1229" height="740" alt="image" src="https://github.com/user-attachments/assets/3d2ff9e5-245e-4dfc-8f00-ac1cb4b35adf" />
 
 Order Insights:
+
 <img width="1292" height="756" alt="image" src="https://github.com/user-attachments/assets/8789fd8e-a3d4-4075-94c6-e16800989e8c" />
 
 
 
 
-📌 Conclusion
+---
 
-Power BI enabled deep insights into:
+## 🚀 Conclusion
 
-Customer performance
+This project demonstrates how **Power BI transforms supply chain delivery data into strategic insights**. By analyzing OTIF performance, customer behavior, and operational gaps, organizations can improve delivery reliability, increase customer retention, and achieve supply chain excellence.
 
-Product demand
+Continuous monitoring, data-driven decision-making, and targeted operational improvements can significantly raise OTIF performance beyond industry benchmarks.
 
-Delivery timing gaps
+---
 
-OTIF success and failure rates
+## 👩‍💼 Author
 
-With continuous monitoring and strategic intervention, OTIF performance can improve from 65% to industry-leading benchmarks.
+**Arya Chavan**
+
